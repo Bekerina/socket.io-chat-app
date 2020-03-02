@@ -5,11 +5,33 @@ variable socket*/
 var socket = io.connect(window.location.protocol + "//" + window.location.host);
 
 //Query DOM
-var message = document.getElementById('message');
-var nameLine = document.getElementById('name-line');
-var btn = document.getElementById('send');
-var output = document.getElementById('output');
-var feedback = document.getElementById('feedback');
+var message, nameLine, btn, output, feedback;
+
+message = document.getElementById('message');
+nameLine = document.getElementById('name-line');
+btn = document.getElementById('send');
+output = document.getElementById('output');
+feedback = document.getElementById('feedback');
+
+//automatically scrolling down to recent message
+
+/*output.addEventListener('scroll', function(){
+    if (output != null) {
+        output.scrollTop = output.scrollHeight;
+       /!* document.documentElement.scrollHeight - window.innerHeight;*!/ // button of the scrolled page
+    } else {
+
+    }*/
+/*});*/
+
+
+//when enter button is pushed message sends
+message.addEventListener('keyup', function(event){
+    if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById('send').click();
+    }
+});
 
 // emmit events when button is pushed
 btn.addEventListener('click', function () {

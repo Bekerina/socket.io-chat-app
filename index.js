@@ -30,13 +30,13 @@ io.on('connection', function(socket){
     console.log('made socket connection', socket.id);
 
     /*listening for that message being send to us from the clients. */
-    socket.on('chat', function (data) {
+    socket.on('chat', function(data) {
     /*sending data to all connected clients. This is going to refer to
     all sockets that are connected to the server*/
         io.sockets.emit('chat', data);
     });
     /*listening for a typing message from front-end. data- username*/
-    socket.on('typing', function (data) {
+    socket.on('typing', function(data) {
         //broadcasting this massage to every other single socket
         socket.broadcast.emit('typing', data);
     });

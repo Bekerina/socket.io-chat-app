@@ -13,16 +13,14 @@ btn = document.getElementById('send');
 output = document.getElementById('output');
 feedback = document.getElementById('feedback');
 
-//automatically scrolling down to recent message
-
-/*output.addEventListener('scroll', function(){
+/*//automatically scrolling down to recent message
+output.addEventListener('scroll', function(){
     if (output != null) {
         output.scrollTop = output.scrollHeight;
        /!* document.documentElement.scrollHeight - window.innerHeight;*!/ // button of the scrolled page
     } else {
-
-    }*/
-/*});*/
+    }
+});*/
 
 
 //when enter button is pushed message sends

@@ -4,18 +4,23 @@ body{
     margin: 0;
     display: flex;
     justify-content: center;
+    height: 100%;
 }
 
 #io-chat {
+    height: 500px;
     width: 100%;
     max-width: 1000px;
     margin: 0 auto;
+    position: relative;
+    flex: 1;
+    display: flex;
+    background-color: inherit;
 }
 
-#chat-window {
-    height: 550px;
-    overflow: auto;
-    background-color: inherit;
+#output {
+    flex: 1;
+    overflow-y: scroll;
 }
 
 #output p{

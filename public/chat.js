@@ -56,6 +56,12 @@ socket.on('chat', function (data) {
     //removes message typing, when message is sent
     feedback.innerHTML = "";
     output.innerHTML += '<p><strong>' + data.nameLine + ':</strong> ' + data.message + '</p>';
+    output.scrollTo({
+        top: output.scrollHeight,
+        left: 0,
+        behavior: 'smooth'
+    });
+
 });
 
 socket.on('typing', function(data) {

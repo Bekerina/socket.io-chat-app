@@ -13,15 +13,6 @@ btn = document.getElementById('send');
 output = document.getElementById('output');
 feedback = document.getElementById('feedback');
 
-/*//automatically scrolling down to recent message
-output.addEventListener('scroll', function(){
-    if (output != null) {
-        output.scrollTop = output.scrollHeight;
-       /!* document.documentElement.scrollHeight - window.innerHeight;*!/ // button of the scrolled page
-    } else {
-    }
-});*/
-
 
 //when enter button is pushed message sends
 message.addEventListener('keyup', function(event){
@@ -40,8 +31,15 @@ btn.addEventListener('click', function () {
         message: message.value,
         nameLine: nameLine.value
     });
+
+    //error message
+/*    if (nameLine.value === "") {
+        document.getElementById("error-message-name").innerHTML = 'Name must be filled out';
+/!*        alert("Name must be filled out");*!/
+    }
     message.value = "";
-});
+});*/
+
 
 /*attaching an event listener to input field - message. Event that we want
 to listen for is when we're typing (key press event) when this event occurs

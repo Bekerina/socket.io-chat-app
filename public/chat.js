@@ -31,14 +31,8 @@ btn.addEventListener('click', function () {
         message: message.value,
         nameLine: nameLine.value
     });
-
-    //error message
-/*    if (nameLine.value === "") {
-        document.getElementById("error-message-name").innerHTML = 'Name must be filled out';
-/!*        alert("Name must be filled out");*!/
-    }
     message.value = "";
-});*/
+});
 
 
 /*attaching an event listener to input field - message. Event that we want

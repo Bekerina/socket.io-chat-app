@@ -66,6 +66,10 @@ input{
 
 }
 
+input:focus::placeholder {
+    color: transparent;
+}
+
 button{
     width: 100%;
     max-width: 1000px;

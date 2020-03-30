@@ -8,7 +8,7 @@ body{
 }
 
 #io-chat {
-    height: 500px;
+    height: 600px;
     width: 100%;
     max-width: 1000px;
     margin: 0 auto;
@@ -18,9 +18,40 @@ body{
     background-color: inherit;
 }
 
+@media screen and (max-height: 700px) {
+    #io-chat {
+        height: 500px;
+}
+}
+
+@media screen and (max-height: 600px) {
+    #io-chat {
+        height: 400px;
+    }
+}
+
+@media screen and (max-height: 500px) {
+    #io-chat {
+        height: 300px;
+    }
+}
+
+@media screen and (max-height: 400px) {
+    #io-chat {
+        height: 200px;
+    }
+}
+
+@media screen and (max-height: 300px) {
+    #io-chat {
+        height: 100px;
+    }
+}
+
 #output {
     flex: 1;
     overflow-y: auto;
+    margin-bottom: 50px;
 }
 
 #output p{

@@ -2,57 +2,25 @@ body{
     font-family: 'Raleway', sans-serif;
     background-color: #fdfaff;
     margin: 0;
-    display: flex;
-    justify-content: center;
+    padding: 0;
     height: 100%;
+}
+.container {
+    margin-left:auto;
+    margin-right:auto;
+    width:720px;
+    position:relative;
+    display: flex;
+    flex-direction: column;
+    height:100%;
 }
 
 #io-chat {
-    height: 600px;
-    width: 100%;
-    max-width: 1000px;
-    margin: 0 auto;
+    overflow-y: scroll;
+    flex: 1;
     position: relative;
-    flex: 1;
-    display: flex;
-    background-color: inherit;
 }
 
-@media screen and (max-height: 700px) {
-    #io-chat {
-        height: 500px;
-}
-}
-
-@media screen and (max-height: 600px) {
-    #io-chat {
-        height: 400px;
-    }
-}
-
-@media screen and (max-height: 500px) {
-    #io-chat {
-        height: 300px;
-    }
-}
-
-@media screen and (max-height: 400px) {
-    #io-chat {
-        height: 200px;
-    }
-}
-
-@media screen and (max-height: 300px) {
-    #io-chat {
-        height: 100px;
-    }
-}
-
-#output {
-    flex: 1;
-    overflow-y: auto;
-    margin-bottom: 50px;
-}
 
 #output p{
     padding: 14px 0;
@@ -72,7 +40,10 @@ body{
 }
 
 #send-input-button {
-    position: fixed;
+    height:200px;
+
+}
+ /*   position: fixed;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -82,7 +53,7 @@ body{
     width: 98%;
     max-width: 1000px;
     padding: 10px;
-}
+}*/
 
 input{
     width: 100%;

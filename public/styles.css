@@ -1,8 +1,13 @@
+html {
+    height:100%;
+}
+
 body{
     font-family: 'Raleway', sans-serif;
     background-color: #fdfaff;
     margin: 0;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     height: 100%;
 }
@@ -14,44 +19,12 @@ body{
     margin: 0 auto;
     position: relative;
     flex: 1;
-    display: flex;
     background-color: inherit;
 }
 
-@media screen and (max-height: 700px) {
-    #io-chat {
-        height: 500px;
-}
-}
-
-@media screen and (max-height: 600px) {
-    #io-chat {
-        height: 400px;
-    }
-}
-
-@media screen and (max-height: 500px) {
-    #io-chat {
-        height: 300px;
-    }
-}
-
-@media screen and (max-height: 400px) {
-    #io-chat {
-        height: 200px;
-    }
-}
-
-@media screen and (max-height: 300px) {
-    #io-chat {
-        height: 100px;
-    }
-}
-
 #output {
-    flex: 1;
-    overflow-y: auto;
-    margin-bottom: 50px;
+    height:100%;
+    overflow-y: scroll;
 }
 
 #output p{
@@ -72,10 +45,9 @@ body{
 }
 
 #send-input-button {
-    position: fixed;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    position: relative;
+    flex-grow:0;
+    flex-shrink: 0;
     margin: auto;
     justify-content: center;
     bottom: 0;

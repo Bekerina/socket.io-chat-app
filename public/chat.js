@@ -5,7 +5,7 @@ variable socket*/
 var socket = io.connect(window.location.protocol + "//" + window.location.host);
 
 //Query DOM
-var message, nameLine, btn, output, feedback;
+var message, nameLine, btn, output, feedback, input, picker;
 
 message = document.getElementById('message');
 nameLine = document.getElementById('name-line');

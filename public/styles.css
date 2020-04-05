@@ -13,18 +13,19 @@ body{
 }
 
 #io-chat {
-    height: 600px;
+    box-sizing: border-box;
+    height: 500px;
     width: 100%;
     max-width: 1000px;
-    margin: 0 auto;
     position: relative;
     flex: 1;
     background-color: inherit;
+    margin: auto;
 }
 
 #output {
-    height:100%;
-    overflow-y: scroll;
+    height: 100%;
+    overflow-y: auto;
 }
 
 #output p{
@@ -45,10 +46,11 @@ body{
 }
 
 #send-input-button {
+    box-sizing: border-box;
     position: relative;
-    flex-grow:0;
+    flex-grow: 0;
     flex-shrink: 0;
-    margin: auto;
+    margin: 0 auto 5px auto;
     justify-content: center;
     bottom: 0;
     width: 98%;
@@ -57,16 +59,16 @@ body{
 }
 
 input{
+    box-sizing: border-box;
     width: 100%;
     max-width: 1000px;
-    padding: 10px 20px;
+    padding: 10px;
     margin-bottom: 3px;
     border: 0;
     background-color: #f0edff;
     font-family: 'Raleway', sans-serif;
     font-size: 16px;
     cursor: pointer;
-
 }
 
 input:focus::placeholder {
@@ -86,4 +88,10 @@ button{
 
 button:hover {
     background-color: #ec73ff;
+}
+
+@media only screen and (max-width: 980px) {
+    body {
+        width: 100%;
+    }
 }

@@ -75,6 +75,22 @@ input:focus::placeholder {
     color: transparent;
 }
 
+#message-input {
+    display: flex;
+    width: 100%;
+}
+
+input #message {
+    width: 95%;
+}
+
+#emoji-icon {
+    width: 5%;
+    margin-left: 3px;
+    height: 39px;
+    background-color: #f0edff;
+}
+
 button{
     width: 100%;
     max-width: 1000px;
@@ -86,12 +102,6 @@ button{
     border-radius: 0 0 2px 2px;
 }
 
-.emoji-icon {
-    width: 200px;
-    height: 164px;
-    background-image: url(image/hypnotized_2-01.svg);
-}
-
 button:hover {
     background-color: #ec73ff;
 }
@@ -99,5 +109,12 @@ button:hover {
 @media only screen and (max-width: 980px) {
     body {
         width: 100%;
+    }
+
+    #emoji-icon {
+        width: 10%;
+        margin-left: 3px;
+        height: 39px;
+        background-color: #f0edff;
     }
 }

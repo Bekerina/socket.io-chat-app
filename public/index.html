@@ -18,11 +18,17 @@
             <!--message when someone is typing a message-->
             <div id="feedback"></div>
             <input id="name-line" type="text" placeholder="Name" maxlength="30">
-            <input id="message" type="text" placeholder="Message" maxlength="700">
+            <div id="message-input">
+                <input id="message" type="text" placeholder="Message" maxlength="700">
+                <div id="emoji-icon">
+                    <img src="image/hypnotized.png" width="50">
+                </div>
+            </div>
             <button id="send">Send</button>
-            <object type="image/svg+xml" data="image/hypnotized.png" class="emoji-icon">
+            <!--<img src="image/hypnotized_2-01.svg">-->
+<!--            <object type="image/svg+xml" data="image/hypnotized.png" class="emoji-icon">
                 Emoji icon
-            </object>
+            </object>-->
         </div>
 
         <script src="https://cdn.jsdelivr.net/npm/emoji-button@latest/dist/index.min.js"></script>

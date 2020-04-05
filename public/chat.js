@@ -5,26 +5,27 @@ variable socket*/
 var socket = io.connect(window.location.protocol + "//" + window.location.host);
 
 //Query DOM
-var message, nameLine, btn, output, feedback, input, picker;
+var message, nameLine, btn, output, feedback, emojiButton, input, picker;
 
 message = document.getElementById('message');
 nameLine = document.getElementById('name-line');
 btn = document.getElementById('send');
 output = document.getElementById('output');
 feedback = document.getElementById('feedback');
+emojiButton = document.querySelector('#emoji-icon');
 input = document.querySelector('#message');
 
 //emoji picker
 picker = new EmojiButton ({
-    position: 'right-start'
+    position: 'left-start'
 });
 
 picker.on('emoji', function(emoji) {
     input.value += emoji;
 });
 
-input.addEventListener('click', function(){
-    picker.pickerVisible? picker.hidePicker() : picker.showPicker(input);
+emojiButton.addEventListener('click', function(){
+    picker.pickerVisible ? picker.hidePicker() : picker.showPicker(input);
 });
 
 //when enter button is pushed message sends

@@ -12,7 +12,20 @@ nameLine = document.getElementById('name-line');
 btn = document.getElementById('send');
 output = document.getElementById('output');
 feedback = document.getElementById('feedback');
+input = document.querySelector('#message');
 
+//emoji picker
+picker = new EmojiButton ({
+    position: 'right-start'
+});
+
+picker.on('emoji', function(emoji) {
+    input.value += emoji;
+});
+
+input.addEventListener('click', function(){
+    picker.pickerVisible? picker.hidePicker() : picker.showPicker(input);
+});
 
 //when enter button is pushed message sends
 message.addEventListener('keyup', function(event){

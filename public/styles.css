@@ -35,6 +35,15 @@ body{
     color: #555;
 }
 
+#emoji-icon img {
+
+    padding: 5px;
+    margin: 0;
+    width: 30px;
+    color: #555;
+    opacity: 50%;
+}
+
 #feedback p{
     color: #aaa;
     padding: 14px 0;

@@ -15,6 +15,9 @@ feedback = document.getElementById('feedback');
 emojiButton = document.querySelector('#emoji-icon');
 input = document.querySelector('#message');
 
+//input validation
+
+
 //emoji picker
 picker = new EmojiButton ({
     position: 'left-start'

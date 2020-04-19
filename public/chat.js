@@ -1,11 +1,10 @@
 //Front-end
-// Make connection
-/*socket variable is running on front end, it has nothing to do with server
-variable socket*/
+
+//socket variable. Running on front end.
 var socket = io.connect(window.location.protocol + "//" + window.location.host);
 
 //Query DOM
-var message, nameLine, btn, output, feedback, emojiButton, input, picker;
+var message, nameLine, btn, output, feedback, emojiButton, picker, inputEmoji, form, errorElement;
 
 message = document.getElementById('message');
 nameLine = document.getElementById('name-line');
@@ -13,9 +12,9 @@ btn = document.getElementById('send');
 output = document.getElementById('output');
 feedback = document.getElementById('feedback');
 emojiButton = document.querySelector('#emoji-icon');
-input = document.querySelector('#message');
-
-//input validation
+inputEmoji = document.querySelector('#message');
+form = document.getElementById('form');
+errorElement = document.getElementById('error');
 
 
 //emoji picker
@@ -24,7 +23,7 @@ picker = new EmojiButton ({
 });
 
 picker.on('emoji', function(emoji) {
-    input.value += emoji;
+    inputEmoji.value += emoji;
 });
 
 emojiButton.addEventListener('click', function(){
@@ -39,17 +38,42 @@ message.addEventListener('keyup', function(event){
     }
 });
 
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+});
+
 // emmit events when button is pushed
 btn.addEventListener('click', function () {
-    /*this will emit message down to the web socket to the server.
-    second parameter is object*/
 
+        let messages = [];
+        if (nameLine.value === '' || nameLine.value == null) {
+            messages.push('Please enter the username')
+        }
+
+        if (message.value === '' || message.value == null) {
+            messages.push('Please enter the message')
+        }
+
+        if (nameLine.value.length <= 2) {
+            messages.push('Username has to be at least 2 characters long')
+        }
+
+        if(messages.length > 0) {
+            errorElement.innerText = messages.join('. ');
+            return
+        }
+
+    //this will emit message down to the web socket to the server.
     socket.emit('chat', {
         message: message.value,
         nameLine: nameLine.value
     });
+
+    //after button is pushed, message input becomes empty
     message.value = "";
+
 });
+
 
 
 /*attaching an event listener to input field - message. Event that we want
@@ -65,6 +89,7 @@ socket.on('chat', function (data) {
     //removes message typing, when message is sent
     feedback.innerHTML = "";
     output.innerHTML += '<p><strong>' + data.nameLine + ':</strong> ' + data.message + '</p>';
+    //down to page bottom where last message is.
     output.scrollTo({
         top: output.scrollHeight,
         left: 0,
@@ -73,6 +98,7 @@ socket.on('chat', function (data) {
 
 });
 
+//when someone is typing this message appears.
 socket.on('typing', function(data) {
     feedback.innerHTML = '<p><em>' + data + ' is typing a message...</em></p>';
 });

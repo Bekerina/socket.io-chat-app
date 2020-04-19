@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Chat app</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
@@ -14,23 +13,26 @@
                 <!--where the data is going to be displayed. All messages will be here-->
                 <div id="output"></div>
         </div>
-        <div id="send-input-button">
+        <div id="send-input-button" >
             <!--message when someone is typing a message-->
             <div id="feedback"></div>
-            <input id="name-line" type="text" placeholder="Name" maxlength="30" autocomplete="off">
-            <div id="message-input">
-                <input id="message" type="text" placeholder="Message" maxlength="700" autocomplete="off">
-                <div id="emoji-icon">
-                    <div>
-                        <img src="image/hypnotized.svg">
+            <div id="error"></div>
+            <form id="form" method="GET" action="/" >
+                <input id="name-line" class="input" type="text" placeholder="Name" maxlength="30" autocomplete="off">
+
+                <div id="message-input" class="input" >
+                    <input id="message" class="input" type="text" placeholder="Message" maxlength="700" autocomplete="off">
+
+                    <div id="emoji-icon">
+                        <div>
+                            <img src="image/hypnotized.svg">
+                        </div>
                     </div>
+
                 </div>
-            </div>
-            <button id="send">Send</button>
-            <!--<img src="image/hypnotized_2-01.svg">-->
-<!--            <object type="image/svg+xml" data="image/hypnotized.png" class="emoji-icon">
-                Emoji icon
-            </object>-->
+
+                <input id="send" type="submit" value="Send">
+            </form>
         </div>
 
         <script src="https://cdn.jsdelivr.net/npm/emoji-button@latest/dist/index.min.js"></script>

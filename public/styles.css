@@ -92,6 +92,12 @@ input:focus::placeholder {
 input #message {
     width: 95%;
 }
+#error {
+    padding: 2px;
+    font-size: 13px;
+    margin: 8px;
+    color: #8a78ff;
+}
 
 #emoji-icon {
     width: 5%;
@@ -100,7 +106,7 @@ input #message {
     background-color: #f0edff;
 }
 
-button{
+#send {
     width: 100%;
     max-width: 1000px;
     background-color: #8a78ff;
@@ -111,7 +117,7 @@ button{
     border-radius: 0 0 2px 2px;
 }
 
-button:hover {
+#send:hover {
     background-color: #ec73ff;
 }
 

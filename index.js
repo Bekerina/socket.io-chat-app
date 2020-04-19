@@ -3,7 +3,16 @@
 
 var express = require('express');
 var socket = require('socket.io');
+const mongo = require('mongodb').MongoClient;
 
+//connect to mongo db
+mongo.connect('mongodb://127.0.0.1:27017', function (err, db) {
+    if(err) {
+        throw err;
+    }
+
+    console.log('MongoDB connected...')
+});
 
 //App setup
 //evoke function express

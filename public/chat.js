@@ -31,15 +31,16 @@ emojiButton.addEventListener('click', function(){
 });
 
 //when enter button is pushed message sends
-message.addEventListener('keyup', function(event){
-    if (event.keyCode === 13) {
-        event.preventDefault();
+message.addEventListener('keyup', function(e){
+    if (e.keyCode === 13) {
+        e.preventDefault();
         document.getElementById('send').click();
     }
 });
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
+
 });
 
 // emmit events when button is pushed

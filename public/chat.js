@@ -1,7 +1,8 @@
 //Front-end
 
 //socket variable. Running on front end.
-var socket = io.connect(window.location.protocol + "//" + window.location.host);
+/*var socket = io.connect(window.location.protocol + "//" + window.location.host);*/
+var socket = io.connect('http://127.0.0.1:3000');
 
 //Query DOM
 var message, nameLine, btn, output, feedback, emojiButton, picker, inputEmoji, form, errorElement;
@@ -40,23 +41,21 @@ message.addEventListener('keyup', function(e){
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
-
 });
 
 // emmit events when button is pushed
 btn.addEventListener('click', function () {
-
         let messages = [];
         if (nameLine.value === '' || nameLine.value == null) {
-            messages.push('Please enter the username')
+            messages.push('Please enter the username');
         }
 
         if (message.value === '' || message.value == null) {
-            messages.push('Please enter the message')
+            messages.push('Please enter the message');
         }
 
         if (nameLine.value.length <= 2) {
-            messages.push('Username has to be at least 2 characters long')
+            messages.push('Username has to be at least 2 characters long');
         }
 
         if(messages.length > 0) {
@@ -74,8 +73,6 @@ btn.addEventListener('click', function () {
     message.value = "";
 
 });
-
-
 
 /*attaching an event listener to input field - message. Event that we want
 to listen for is when we're typing (key press event) when this event occurs

@@ -1,0 +1,5 @@
+mongodb-root-password
+mongodb-user-password
+mongo.init.js
+.idea
+node_modules

@@ -1,0 +1,31 @@
+---
+version: '3.2'
+services:
+  chat:
+    build: .
+    environment:
+      - MONGODB_HOST=mongo
+      - MONGODB_USERNAME=chat
+      - MONGODB_DATABASE=chat
+      - MONGODB_PASSWORD_FILE=/run/secrets/mongodb-user-password
+    ports:
+      - 3000:3000
+    volumes:
+      - ./:/opt/chat
+      - ./mongodb-root-password:/run/secrets/mongodb-user-password:ro
+    depends_on:
+      - mongo
+    restart: always
+  mongo:
+    image: mongo
+    environment:
+      - MONGO_INITDB_DATABASE=chat
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD_FILE=/run/secrets/mongodb-root-password
+    volumes:
+      - mongodb_data:/data/db
+      - ./mongodb-root-password:/run/secrets/mongodb-root-password:ro
+      - ./mongo.init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+    restart: always
+volumes:
+  mongodb_data:

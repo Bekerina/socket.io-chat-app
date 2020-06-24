@@ -1,0 +1,16 @@
+db.auth('root', '<password of the root user>')
+
+db = db.getSiblingDB('chat')
+
+db.createUser(
+    {
+        user: "chat",
+        pwd: "<password of the chat user>",
+        roles: [
+            {
+                role: "readWrite",
+                db: "chat"
+            }
+        ]
+    }
+);
